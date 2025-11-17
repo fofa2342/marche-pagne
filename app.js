@@ -75,5 +75,5 @@ app.use((err, req, res, next) => {
 // Serveur
 const PORT = process.env.PORT
 app.listen(PORT, () => {
-  console.log(`🚀 Serveur lancé sur http://localhost:${PORT}`);
+  console.log(`🚀 Serveur lancé`);
 });

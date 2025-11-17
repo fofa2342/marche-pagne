@@ -1,8 +1,8 @@
 import jwt from 'jsonwebtoken';
 
 const authMiddleware = (req, res, next) => {
-  const AUTH_SERVICE_URL = process.env.AUTH_SERVICE_URL || 'http://localhost:1890';
-  const APP_URL = process.env.APP_URL || 'http://localhost:2000';
+  const AUTH_SERVICE_URL = process.env.AUTH_SERVICE_URL
+  const APP_URL = process.env.APP_URL
 
   let token = req.cookies.token;
 
