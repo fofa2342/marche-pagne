@@ -4,6 +4,7 @@ import express from "express";
 import path from "path";
 import { fileURLToPath } from 'url';
 import cookieParser from 'cookie-parser';
+import cors from 'cors';
 import clientsRoutes from "./routes/clients.js";
 import fournisseursRoutes from "./routes/fournisseurs.js";
 import produitsRoutes from "./routes/produits.js";
@@ -12,6 +13,16 @@ import authRoutes from './routes/auth.js';
 import authMiddleware from './middleware/auth.js';
 
 const app = express();
+
+// Enable trust proxy
+app.set('trust proxy', 1);
+
+// CORS middleware
+app.use(cors({
+  origin: 'https://auth-iota-olive.vercel.app',
+  credentials: true
+}));
+
 
 // Pour __dirname en ES modules
 const __filename = fileURLToPath(import.meta.url);
